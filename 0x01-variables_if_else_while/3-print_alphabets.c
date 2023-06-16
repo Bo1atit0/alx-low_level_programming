@@ -10,14 +10,15 @@ int main(void)
 
 	for (low = 'a'; low <= 'z'; low++)
 	{
+		putchar (low);
+	}
+
 	for (up = 'A'; up <= 'Z'; up++)
 	{
-
-		putchar (low);
 		putchar (up);
+	}
+
 		putchar ('\n');
-	}
-	}
 
 	return (0);
 }
