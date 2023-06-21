@@ -1,13 +1,8 @@
-#include<unistd.h>
+#include"main.h"
 /**
  * main - program that prints _putchar without standard library
  * Return: 0
  */
-int _putchar(charc)
-
-{
-	write(1, &c, 1);
-}
 int main(void)
 {
 	_putchar('_');
