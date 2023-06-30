@@ -4,7 +4,6 @@
  * string_toupper - lowercase to uppercase
  *
  * @str: pointer to string
- * @ptr: pointer to string
  *
  * Return: char
  */
