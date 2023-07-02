@@ -18,11 +18,12 @@ int b;
 
 	for (a = 0; *(s + a); a++)
 	{
-		for (b = 0; b <= 52; b++)
+		for (b = 0; b < 52; b++)
 		{
 			if (let[b] == *(s + a))
 		{
 			*(s + a) = rot[b];
+			break;
 			}
 			}
 			}
