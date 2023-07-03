@@ -10,7 +10,6 @@
 
 char *_strchr(char *s, char c)
 {
-	void *NULL;
 	int len;
 
 	for (len = 0; s[len] != '\0'; len++)
