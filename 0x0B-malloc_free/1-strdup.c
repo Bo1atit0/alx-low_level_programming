@@ -7,27 +7,30 @@
 * Return: pointer to newly allocated space in memory
 */
 
-char *_strncpy(char *dest, char *src, int n);
 char *_strdup(char *str)
 {
 	char *s;
-	int size = 0;
+	unsigned int len, i;
+
+	i = 0;
+	len = 0'
 
 	if (str == NULL)
 	{
 	return (NULL);
 	}
 
-	while (str[size] != '\0')
+	while (str[len])
 	{
-	size++;
+	len++;
 	}
-	s = (char *)malloc(size * sizeof(char));
+	s = (char *)malloc((len + 1) * sizeof(char));
 	if (s == NULL)
 	{
 	return (NULL);
 	}
-	_strncpy(s, str, size);
+	while ((s[i] = str[i]) != '\0')
+		i++
 	return (s);
 
 }
