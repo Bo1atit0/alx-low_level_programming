@@ -21,6 +21,10 @@ char *create_array(unsigned int size, char c)
 	{
 	return (NULL);
 	}
+	if (ptarr == NULL)
+	{
+	return (0);
+	}
 
 	for (count = 0; count < size; count++)
 	ptarr[count] = c;
