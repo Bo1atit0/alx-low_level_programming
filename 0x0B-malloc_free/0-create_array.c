@@ -17,6 +17,11 @@ char *create_array(unsigned int size, char c)
 
 	ptarr = (char *) malloc(size * sizeof(char));
 
+	if (size == 0)
+	{
+	return (NULL);
+	}
+
 	for (count = 0; count < size; count++)
 	ptarr[count] = c;
 
