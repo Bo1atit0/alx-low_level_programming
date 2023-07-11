@@ -20,13 +20,16 @@ char *str_concat(char *s1, char *s2)
 	len2 = 0;
 	lent = 0;
 
-	if (s1 == NULL || s2 == NULL)
-	return (NULL);
-
+	if (s1 != NULL)
+	{
 	while (s1[len1])
 	len1++;
+	}
+	if (s2 != NULL)
+	{
 	while (s2[len2])
 	len2++;
+	}
 
 	lent = len1 + len2;
 	s = (char *)malloc((lent + 1) * sizeof(char));
