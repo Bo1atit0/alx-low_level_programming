@@ -26,7 +26,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 
 /**
- * _recalloc -  reallocates a memory block using malloc and free
+ * _realloc -  reallocates a memory block using malloc and free
  * @ptr: a pointer to the memory previously allocated
  * @old_size: is the size, in bytes, of the allocated space for ptr
  * @new_size: is the new size, in bytes of the new memory block
