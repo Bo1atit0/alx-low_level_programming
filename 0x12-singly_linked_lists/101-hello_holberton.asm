@@ -1,7 +1,7 @@
 extern printf   ; Declare the 'printf' function, which is provided externally
 
 section .data
-msg: db 'Hello, Holberton', 10
+msg: db 'Hello, Holberton', 10, 0
 fmt: db '%s', 0
 
 section .text
