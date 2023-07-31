@@ -12,17 +12,20 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *delnode;
+	listint_t *head2;
+	int data;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 	{
 		return (0);
 	}
 	else
 	{
-		delnode = *head;
-		*head = (*head)->next;
-		free(delnode);
+		data = (*head)->n;
+
+		head2 = (*head)->next;
+		free(*head);
+		*head = head2;
 	}
-	return ((*head)->n);
+	return (data);
 }
