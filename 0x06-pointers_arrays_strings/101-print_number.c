@@ -1,45 +1,49 @@
-#include "main.h"
+#include"main.h"
+
 /**
- * print_number -  prints all integers
- * @n: contains integers
- */
+* print_number -  prints an integer.
+*
+* @n: integer to be printed.
+*
+*/
 
 void print_number(int n)
 {
-	int digits, temp;
+	int res, numdigits = 0;
+	int temp = n;
+	int i, div;
 
 	if (n == 0)
 	{
-	_putchar('0');
-	return;
+	_putchar ('0');
 	}
+	else
+	{
 	if (n < 0)
 	{
-	_putchar('-');
+	_putchar ('-')
 	n = -n;
 	}
-	digits = 0;
-	temp = n;
 
-	while (temp > 0)
-
+	while (temp != 0)
 	{
-	temp /= 10;
-	digits++;
+	temp = temp / 10;
+	numdigits++;
 	}
 
-	while (digits > 0)
+	while (numdigits > 0)
 	{
-	int divisor = 1;
-	int digit, i;
-
-	for (i = 1; i < digits; i++)
+	div = 1;
+	for (i = 0; i < numdigits - 1; i++)
 	{
-	divisor *= 10;
+	div = div * 10;
 	}
-	digit = n / divisor;
-	_putchar(digit + '0');
-	n %= divisor;
-	digits--;
+res = n / div;
+_putchar(res + '0');
+n = n % div;
+numdigits--;
 	}
 }
+}
+
+
