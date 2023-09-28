@@ -22,9 +22,9 @@ unsigned int binary_to_uint(const char *b)
 while (*b != '\0')
 	{
 	if (*b == '0' || *b == '1')
-  {
+	{
 	res = res * 2 + (*b - '0');
-  }
+	}
 else
 {
 	return (0);
