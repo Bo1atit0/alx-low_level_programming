@@ -2,38 +2,38 @@
 #include <stdio.h>
 
 /**
- * binary_to_uint - Converts a binary string to an unsigned integer.
+ * print_binary - prints the binary representation of a number..
  *
- * @b: A pointer to a binary string. must contain only '0' and '1' characters.
+ * @n: the unsigned integer.
  *
- * Return: The converted unsigned integer, or 0 if an invalid character is found.
+ * Return: The binary representation of the number.
  */
 
 void print_binary(unsigned long int n)
 {
   
- int i, leadingzero = 1;
-   unsigned long int mask;
+  int i, leadingzero = 1;
+  unsigned long int mask;
   
   if (n == 0)
   {
-    _putchar ('0');
+  _putchar ('0');
   }
   
   for (i = sizeof(n) * 8 - 1; i >= 0; i--)
-    {
+  {
      /* n = n >> 1;*/
-      mask = 1 << i;
+  mask = 1 << i;
       
-    if (n & mask)
+  if (n & mask)
   {
-    _putchar ('1');
-     leadingzero = 0;
+  _putchar ('1');
+  leadingzero = 0;
   }
-      else if (!leadingzero)
-  {
-    _putchar ('0');
+  else if (!leadingzero)
+{
+  _putchar ('0');
   }
       
-    }
-}
+  }
+  }
