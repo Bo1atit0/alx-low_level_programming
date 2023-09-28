@@ -10,19 +10,19 @@
  */
 
 void print_binary(unsigned long int n)
-{ 
+{
 int i, leadingzero = 1;
 unsigned long int mask;
-  
+
 if (n == 0)
 {
 _putchar ('0');
-}  
+}
 for (i = sizeof(n) * 8 - 1; i >= 0; i--)
 {
  /* n = n >> 1;*/
 mask = 1 << i;
-     
+
 if (n & mask)
 {
 _putchar ('1');
@@ -32,6 +32,6 @@ else if (!leadingzero)
 {
 _putchar ('0');
 }
-      
-  }
-  }
+
+}
+}
