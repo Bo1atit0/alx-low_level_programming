@@ -18,7 +18,7 @@ if (n == 0)
 {
 _putchar ('0');
 }
-for (i = sizeof(n) * 8 - 1; i >= 0; i--)
+for (i = 7; i >= 0; i--)
 {
  /* n = n >> 1;*/
 mask = 1 << i;
