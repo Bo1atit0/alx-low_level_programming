@@ -23,7 +23,8 @@ while (*b != '\0')
 	{
 	if (*b == '0' || *b == '1')
 	res = res * 2 + (*b - '0');
-else
+
+	else
 	return (0);
 	b++;
 }
