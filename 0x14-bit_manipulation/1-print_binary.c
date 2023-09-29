@@ -11,27 +11,34 @@
 
 void print_binary(unsigned long int n)
 {
-int i, leadingzero = 1;
-unsigned long int mask;
+unsigned long int i;
+unsigned  int nBits;
+unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+int leadingzero = 0;
 
 if (n == 0)
 {
-_putchar ('0');
+_putchar('0');
+return;
 }
-for (i = sizeof(n) * 8 - 1; i >= 0; i--)
-{
- /* n = n >> 1;*/
-mask = 1 << i;
 
+while ((n & mask) == 0)
+{
+mask = mask >> 1;
+leadingzero++;
+}
+
+nBits =  (sizeof(unsigned long int) * 8 - leadingzero);
+for (i = 0; i < nBits; i++)
+{
 if (n & mask)
 {
-_putchar ('1');
-leadingzero = 0;
+ _putchar('1');
 }
-else if (!leadingzero)
+else 
 {
-_putchar ('0');
+ _putchar('0');
 }
-
+mask = mask >> 1;
 }
 }
