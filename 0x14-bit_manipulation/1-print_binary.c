@@ -33,11 +33,11 @@ for (i = 0; i < nBits; i++)
 {
 if (n & mask)
 {
- _putchar('1');
+_putchar('1');
 }
-else 
+else
 {
- _putchar('0');
+_putchar('0');
 }
 mask = mask >> 1;
 }
