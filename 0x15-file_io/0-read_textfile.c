@@ -21,24 +21,24 @@ FILE *fp = NULL;
 
 if (filename == NULL)
 {
-    return(0);
+return(0);
 }
 fp = fopen("filename", "r");
 if (fp == NULL)
 {
-    return (0);
+ return (0);
 }
 buffer = (char *)malloc(letters * sizeof(char));
 if (buffer == NULL)
 {
-    return (0);
+return (0);
 }
 readfile = fread(buffer, sizeof(char), letters, fp);
 
 while ((ch = fgetc(fp)) != EOF)
 {
-    putchar(ch);
-    count++;
+ putchar(ch);
+count++;
 }
 fclose(fp);
 return (count);
