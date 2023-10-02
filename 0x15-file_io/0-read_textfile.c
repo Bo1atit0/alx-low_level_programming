@@ -19,7 +19,7 @@ char *buffer;
 
 if (filename == NULL)
 {
-return(0);
+return (0);
 }
 
 o = open("filename", O_RDONLY);
@@ -37,7 +37,7 @@ w = write(STDOUT_FILENO, buffer, r);
 
 close(o);
 free(buffer);
-return(w);
+return (w);
 
 }
 
