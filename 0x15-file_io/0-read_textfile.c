@@ -22,10 +22,11 @@ if (filename == NULL)
 return (0);
 }
 
-o = open("filename", O_RDONLY);
+o = open(filename, O_RDONLY);
 if (o == -1)
 {
 return (0);
+
 }
 buffer = (char *)malloc(letters * sizeof(char));
 if (buffer == NULL)
