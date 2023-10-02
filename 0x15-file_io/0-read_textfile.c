@@ -3,11 +3,11 @@
 /**
 *read_textfile - a program that reads a text file and prints
 *it to  standard output.
-
+*
 *@letters: numbers of letters to be printed.
-
+*
 *@filename: name of file.
-
+*
 *Return: number of characters printed.
 */
 
@@ -21,12 +21,12 @@ FILE *fp = NULL;
 
 if (filename == NULL)
 {
-return(0);
+return (0);
 }
 fp = fopen("filename", "r");
 if (fp == NULL)
 {
- return (0);
+return (0);
 }
 buffer = (char *)malloc(letters * sizeof(char));
 if (buffer == NULL)
@@ -37,7 +37,7 @@ readfile = fread(buffer, sizeof(char), letters, fp);
 
 while ((ch = fgetc(fp)) != EOF)
 {
- putchar(ch);
+putchar(ch);
 count++;
 }
 fclose(fp);
