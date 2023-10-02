@@ -13,18 +13,17 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-char ch;
-int count = 0;
+int o;
+ssize_t r, w;
 char *buffer;
-size_t readfile;
-FILE *fp = NULL;
 
 if (filename == NULL)
 {
-return (0);
+return(0);
 }
-fp = fopen("filename", "r");
-if (fp == NULL)
+
+o = open("filename", O_RDONLY);
+if (o == -1)
 {
 return (0);
 }
@@ -33,14 +32,12 @@ if (buffer == NULL)
 {
 return (0);
 }
-readfile = fread(buffer, sizeof(char), letters, fp);
+r = read(o, buffer, letters);
+w = write(STDOUT_FILENO, buffer, r);
 
-while ((ch = fgetc(fp)) != EOF)
-{
-putchar(ch);
-count++;
-}
-fclose(fp);
-return (count);
+close(o);
+free(buffer);
+return(w);
+
 }
 
