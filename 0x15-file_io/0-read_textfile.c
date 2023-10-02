@@ -3,44 +3,41 @@
 /**
 *read_textfile - a program that reads a text file and prints
 *it to  standard output.
-
+*
 *@letters: numbers of letters to be printed.
-
+*
 *@filename: name of file.
-
+*
 *Return: number of characters printed.
 */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-char ch;
-int count = 0;
+int o;
+ssize_t r, w;
 char *buffer;
-size_t readfile;
-FILE *fp = NULL;
 
 if (filename == NULL)
 {
 return(0);
 }
-fp = fopen("filename", "r");
-if (fp == NULL)
+
+o = open("filename", O_RDONLY);
+if (o == -1)
 {
- return (0);
+return (0);
 }
 buffer = (char *)malloc(letters * sizeof(char));
 if (buffer == NULL)
 {
 return (0);
 }
-readfile = fread(buffer, sizeof(char), letters, fp);
+r = read(o, buffer, letters);
+w = write(STDOUT_FILENO, buffer, r);
 
-while ((ch = fgetc(fp)) != EOF)
-{
- putchar(ch);
-count++;
-}
-fclose(fp);
-return (count);
+close(o);
+free(buffer);
+return(w);
+
 }
 
