@@ -26,7 +26,8 @@ if (text_content == NULL)
 {
 text_content = "";
 }
-for (i = 0; text_content[i]; i++);
+for (i = 0; text_content[i]; i++)
+;
 
 wr = write(fd, text_content, i);
 if (wr == -1)
