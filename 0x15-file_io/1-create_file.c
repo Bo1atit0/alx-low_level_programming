@@ -24,7 +24,7 @@ return (-1);
 
 if (text_content == NULL)
 {
-    text_content = "";
+text_content = "";
 }
 for (i = 0; text_content[i] != EOF; i++)
 {
