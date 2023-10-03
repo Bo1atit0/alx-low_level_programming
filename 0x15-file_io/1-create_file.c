@@ -28,12 +28,12 @@ text_content = "";
 }
 for (i = 0; text_content[i]; i++);
 
-wr = write(fd, text_content, 1);
+wr = write(fd, text_content, i);
 if (wr == -1)
 {
-close(fd);
 return (-1);
 }
+
 close (fd);
 return (1);
 }
