@@ -26,14 +26,13 @@ if (text_content == NULL)
 {
 text_content = "";
 }
-for (i = 0; text_content[i]; i++)
-{
+for (i = 0; text_content[i]; i++);
+
 wr = write(fd, text_content, 1);
 if (wr == -1)
 {
 close(fd);
 return (-1);
-}
 }
 close (fd);
 return (1);
