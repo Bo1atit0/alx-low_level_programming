@@ -29,7 +29,6 @@ text_content = "";
 for (i = 0; text_content[i]; i++);
 {
 wr = write(fd, text_content, 1);
-}
 if (wr == -1)
 {
 return (-1);
