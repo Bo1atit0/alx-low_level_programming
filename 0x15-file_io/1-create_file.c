@@ -26,7 +26,7 @@ if (text_content == NULL)
 {
 text_content = "";
 }
-for (i = 0; text_content[i] != EOF; i++)
+for (i = 0; text_content[i] != '\0'; i++)
 {
 wr = write(op, text_content, i);
 }
