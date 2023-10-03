@@ -34,6 +34,6 @@ if (wr == -1)
 {
 return (-1);
 }
-close (op);
+close(op);
 return (1);
 }
