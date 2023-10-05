@@ -41,11 +41,13 @@ source_close = close(source);
 if (source_close == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't close fd %d", source);
+exit (100);
 }
 dest_close = close(dest);
 if (dest_close == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't close fd %d", dest);
+exit (100);
 }
 return (0);
 }
