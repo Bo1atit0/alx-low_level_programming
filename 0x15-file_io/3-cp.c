@@ -36,6 +36,7 @@ int source, dest;
 ssize_t r, wr;
 int source_close, dest_close;
 char buffer[1024];
+ssize_t total_written;
 
 if (argc != 3)
 {
@@ -51,6 +52,16 @@ while ((r = read(source, buffer, 1024)) > 0)
 {
 if (r == -1)
 handle_errors(r, 0, argv);
+
+total_written = 0;
+while (total_written < r)
+{
+wr = write(dest, buffer + total_written, r - total_written);
+if (wr == -1)
+handle_errors(0, wr, argv);
+total_written += wr;
+}  
+  
 wr = write(dest, buffer, r);
 if (wr == -1)
 handle_errors(0, wr, argv);
