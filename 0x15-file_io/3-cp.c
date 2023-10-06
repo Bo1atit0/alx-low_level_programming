@@ -8,7 +8,7 @@
 *Return: nothing
 */
 
-int handle_errors(int source, int dest, char **argv)
+void handle_errors(int source, int dest, char *argv[])
 {
 if (source == -1)
 {
