@@ -50,7 +50,9 @@ handle_errors(0, dest, argv);
 while ((r = read(source, buffer, 1024)) > 0)
 {
 wr = write(dest, buffer, r);
+if (wr = -1)
 handle_errors(0, wr, argv);
+if (r = -1)
 handle_errors(r, 0, argv);
 }
 source_close = close(source);
