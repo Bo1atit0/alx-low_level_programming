@@ -46,19 +46,15 @@ source = open(argv[1], O_RDONLY);
 handle_errors(source, 0, argv);
 dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 handle_errors(source, dest, argv);
-
 r = 1024;
 while (r == 1024)
 {
-
 r = read(source, buffer, 1024);
 if (r == -1)
 handle_errors(-1, 0, argv);
-
 wr = write(dest, buffer, r);
 if (wr == -1)
 handle_errors(0, -1, argv);
-
 }
 source_close = close(source);
 if (source_close == -1)
