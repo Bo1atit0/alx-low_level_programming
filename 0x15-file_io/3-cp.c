@@ -19,7 +19,7 @@ exit(98);
 if (dest == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
-exit(98);
+exit(99);
 }
 }
 
@@ -44,7 +44,7 @@ exit(98);
 }
 source = open(argv[1], O_RDONLY);
 handle_errors(source, 0, argv);
-dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 handle_errors(0, dest, argv);
 
 while ((r = read(source, buffer, 1024)) > 0)
