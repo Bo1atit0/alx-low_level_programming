@@ -49,7 +49,7 @@ handle_errors(0, dest, argv);
 
 while ((r = read(source, buffer, 1024)) > 0)
 {
-    if (r == -1)
+if (r == -1)
 handle_errors(r, 0, argv);
 wr = write(dest, buffer, r);
 if (wr == -1)
