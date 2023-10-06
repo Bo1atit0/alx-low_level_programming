@@ -17,7 +17,7 @@ unsigned int count = 0;
 
 while (diff != 0)
 {
-count = count + diff & 1;
+count = count + (diff & 1);
 diff = diff >> 1;
 }
 
