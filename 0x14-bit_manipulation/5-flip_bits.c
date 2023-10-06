@@ -12,20 +12,14 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-unsigned long int i;
-int count = 0;
-int bit1, bit2;
+unsigned long int diff = n ^ m;
+unsigned int count = 0;
 
-for (i = 0; i < (sizeof(unsigned long int) * 8); i++)
+while (diff != 0)
 {
-bit1 = (n >> i) & 1;
-bit2 = (m >> i) & 1;
+count = count + diff & 1;
+diff = diff >> 1;
+}
 
-if (bit1 != bit2)
-{
-n = n ^ (1 << i);
-count++;
-}
-}
 return (count);
 }
