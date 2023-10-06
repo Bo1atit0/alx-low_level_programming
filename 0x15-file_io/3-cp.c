@@ -32,46 +32,43 @@ void handle_errors(int source, int dest, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int source, dest;
-	ssize_t r, wr;
-	int source_close, dest_close;
-	char buffer[1024];
+int source, dest;
+ssize_t r, wr;
+int source_close, dest_close;
+char buffer[1024];
 
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
-		exit(98);
-	}
-	source = open(argv[1], O_RDONLY);
-	handle_errors(source, 0, argv);
-	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	handle_errors(0, dest, argv);
+if (argc != 3)
+{
+dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+exit(98);
+}
+source = open(argv[1], O_RDONLY);
+handle_errors(source, 0, argv);
+dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+handle_errors(0, dest, argv);
 
-	r = 1024;
-	while (r == 1024)
-	{
+r = 1024;
+while (r == 1024)
+{
 
-		r = read(dest, buffer, 1024);
-		if (r == -1)
-			handle_errors(-1, 0, argv);
-
-		wr = write(dest, buffer, r);
-		if (wr == -1)
-			handle_errors(0, -1, argv);
-
-	}
-
-	source_close = close(source);
-	if (source_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", source);
-		exit(100);
-	}
-	dest_close = close(dest);
-	if (dest_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", source);
-		exit(100);
-	}
-	return (0);
+r = read(dest, buffer, 1024);
+if (r == -1)
+handle_errors(-1, 0, argv);
+wr = write(dest, buffer, r);
+if (wr == -1)
+handle_errors(0, -1, argv);
+}
+source_close = close(source);
+if (source_close == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d", source);
+exit(100);
+}
+dest_close = close(dest);
+if (dest_close == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d", source);
+exit(100);
+}
+return (0);
 }
