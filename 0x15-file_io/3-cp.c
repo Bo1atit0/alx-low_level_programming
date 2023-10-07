@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 	err_close = close(dest);
 	if (err_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest);
 		exit(100);
 	}
 	return (0);
