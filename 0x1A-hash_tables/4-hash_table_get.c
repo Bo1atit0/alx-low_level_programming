@@ -21,7 +21,7 @@ element = ht->array[index];
 
 while (element)
 {
-	if (strcmp(key, element->key))
+	if (strcmp(key, element->key) == 0)
 	{
 	return (element->value);
 	}
