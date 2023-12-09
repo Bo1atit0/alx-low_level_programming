@@ -25,6 +25,7 @@ while (element)
 	{
 	return (element->value);
 	}
+	element = element->next;
 }
 
 return (NULL);
