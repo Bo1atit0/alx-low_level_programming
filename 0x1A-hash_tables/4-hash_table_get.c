@@ -11,18 +11,21 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 unsigned long int index;
 hash_node_t *element = NULL;
-char *value = NULL;
 
 if (key == NULL || ht == NULL)
 {
 return (NULL);
 }
 index = key_index((const unsigned char *)key, ht->size);
-if (ht->array[index])
-{
 element = ht->array[index];
-value = element->value;
+
+while (element)
+{
+	if (strcmp(key, element->key))
+	{
+	return (element->value);
+	}
 }
 
-return (value);
+return (NULL);
 }
