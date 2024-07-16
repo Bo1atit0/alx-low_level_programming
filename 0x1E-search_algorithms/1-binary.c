@@ -28,8 +28,10 @@ int binary_search(int *array, size_t size, int value)
 			{
 				printf(", ");
 			}
+			else
+				printf("\n");
 		}
-		printf("\n");
+
 		mid = (l + r) / 2;
 		if (value == array[mid])
 		{
