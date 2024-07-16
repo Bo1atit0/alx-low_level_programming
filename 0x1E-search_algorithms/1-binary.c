@@ -8,17 +8,18 @@
  * @size: is the number of elements in array
  * @value: is the value to search for
  *
+ * Return: return the index where value is located
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-        size_t i, l, r, mid;
+	size_t i, l, r, mid;
 
-        l = 0;
-        r = size - 1;
+	l = 0;
+	r = size - 1;
 
-        while (l <= r)
-        {
+	while (l <= r)
+	{
 		printf("Searching in array: ");
 		for (i = l; i <= r; i++)
 		{
@@ -29,21 +30,21 @@ int binary_search(int *array, size_t size, int value)
 			}
 		}
 		printf("\n");
-                 mid =(l + r)/2;
-                if (value == array[mid])
-                {
-                        return(mid);
-                }
-                else if (value < array[mid])
-                {
-                        r = mid - 1;
-                        /*mid = l + r / 2;*/
-                }
-                else
-                {
-                        l = mid + 1;
-                        /*mid = l + r / 2;*/
-                }
-        }
-        return (-1);
+		mid = (l + r) / 2;
+		if (value == array[mid])
+		{
+			return (mid);
+		}
+		else if (value < array[mid])
+		{
+			r = mid - 1;
+			/*mid = l + r / 2;*/
+		}
+		else
+		{
+			l = mid + 1;
+			/*mid = l + r / 2;*/
+		}
+	}
+	return (-1);
 }
